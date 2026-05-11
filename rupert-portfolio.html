@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rupert Tropico – Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&family=Poppins:wght@800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">HOME</a></li>
+      <li><a href="#about" class="nav-link">ABOUT</a></li>
+      <li><a href="#skills" class="nav-link">SKILLS</a></li>
+      <li><a href="#project" class="nav-link">PROJECT</a></li>
+    </ul>
+    <div class="nav-underline"></div>
+  </nav>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navUnderline = document.querySelector('.nav-underline');
+
+    function updateUnderline(link) {
+      const linkRect = link.getBoundingClientRect();
+      const navRect = document.querySelector('nav').getBoundingClientRect();
+      
+      navUnderline.style.width = linkRect.width + 'px';
+      navUnderline.style.left = (linkRect.left - navRect.left) + 'px';
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          window.history.pushState(null, '', link.getAttribute('href'));
+        }
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        updateUnderline(link);
+      });
+    });
+
+    // Initialize on page load
+    updateUnderline(document.querySelector('.nav-link.active'));
+  </script>
+
+  <div class="sections-container">
+    <!-- HOME SECTION -->
+    <section class="hero" id="home">
+      <div class="content">
+        <!-- TEXT -->
+        <div class="text-block">
+          <p class="hello">Hello It's Me</p>
+          <div class="name-line">
+            <span class="name-first">Rupert</span>
+            <span class="name-last">Tropico</span>
+          </div>
+          <p class="role">UI/UX Designer / Programmer</p>
+          <div class="language-carousel">
+            <div class="language-carousel-track">
+              <img src="assets/logos/typescript.svg" alt="TypeScript" class="language-carousel-icon">
+              <img src="assets/logos/rust.svg" alt="Rust" class="language-carousel-icon">
+              <img src="assets/logos/javascript.svg" alt="JavaScript" class="language-carousel-icon">
+              <img src="assets/logos/python.svg" alt="Python" class="language-carousel-icon">
+              <img src="assets/logos/java.svg" alt="Java" class="language-carousel-icon">
+              <img src="assets/logos/php.svg" alt="PHP" class="language-carousel-icon">
+              <img src="assets/logos/csharp.svg" alt="C sharp" class="language-carousel-icon">
+              <img src="assets/logos/cplus.svg" alt="C plus plus" class="language-carousel-icon">
+              <img src="assets/logos/typescript.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/rust.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/javascript.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/python.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/java.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/php.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/csharp.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+              <img src="assets/logos/cplus.svg" alt="" class="language-carousel-icon" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+
+        <!-- PHOTO -->
+        <div class="photo-wrap">
+          <div class="photo-placeholder">
+            <img src="rupert.png" alt="Rupert's Photo" class="photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="hero about-section" id="about">
+      <div class="bg-about"></div>
+      <div class="content">
+        <div class="text-block">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-text">
+            I'm a passionate UI/UX Designer and Programmer with expertise in creating beautiful and functional digital experiences. 
+            With a keen eye for design and strong technical skills, I bring ideas to life through innovative solutions.
+          </p>
+          <p class="section-text">
+            My journey combines creativity with technology, focusing on user-centered design and seamless functionality.
+          </p>
+          <p class="section-text">
+            I enjoy turning ideas into simple, organized, and visually polished websites. I focus on layouts that are easy to understand, responsive across screens, and built with clean structure so every project feels clear from design to code.
+          </p>
+          <div class="about-details">
+            <div class="about-card">
+              <h3>Design Mindset</h3>
+              <p>I plan screens around clarity, spacing, visual balance, and the user journey before adding decorative details.</p>
+            </div>
+            <div class="about-card">
+              <h3>Development Focus</h3>
+              <p>I build with HTML, CSS, JavaScript, and programming fundamentals while improving structure and interaction.</p>
+            </div>
+            <div class="about-card">
+              <h3>Creative Process</h3>
+              <p>I sketch ideas, test layouts, refine colors and typography, then polish the final experience through small details.</p>
+            </div>
+            <div class="about-card">
+              <h3>Personal Goal</h3>
+              <p>My goal is to keep growing as a designer and programmer who can create useful, beautiful digital work.</p>
+            </div>
+          </div>
+
+          <h3 class="subsection-title about-education-title">Education</h3>
+          <div class="education-list">
+            <div class="education-item">
+              <span class="education-year">2016</span>
+              <div>
+                <h3>Opol Central School</h3>
+                <p>Elementary Graduate</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <span class="education-year">2020</span>
+              <div>
+                <h3>Opol National Secondary Technical School</h3>
+                <p>Junior High School Graduate</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <span class="education-year">2023</span>
+              <div>
+                <h3>Iponan National High School</h3>
+                <p>Senior High School Graduate</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <span class="education-year">Now</span>
+              <div>
+                <h3>Opol Community College</h3>
+                <p>Currently Studying</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="hero skills-section" id="skills">
+      <div class="content">
+        <div class="text-block">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-text">
+            Technical, design, and workflow skills I use to build clean interfaces, interactive pages, and functional programs.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <img src="assets/logos/typescript.svg" alt="" class="skill-logo">
+              <p>TypeScript</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/rust.svg" alt="" class="skill-logo">
+              <p>Rust</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/javascript.svg" alt="" class="skill-logo">
+              <p>JavaScript</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/python.svg" alt="" class="skill-logo">
+              <p>Python</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/java.svg" alt="" class="skill-logo">
+              <p>Java</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/php.svg" alt="" class="skill-logo">
+              <p>PHP</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/csharp.svg" alt="" class="skill-logo">
+              <p>C#</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/cplus.svg" alt="" class="skill-logo">
+              <p>C++</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">HT</span>
+              <p>HTML</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">CS</span>
+              <p>CSS</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">FG</span>
+              <p>Figma</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">UI</span>
+              <p>UI Design</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">UX</span>
+              <p>UX Research</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">WF</span>
+              <p>Wireframing</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">PT</span>
+              <p>Prototyping</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">RD</span>
+              <p>Responsive Design</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">VD</span>
+              <p>Visual Design</p>
+            </div>
+            <div class="skill-card">
+              <span class="skill-badge">PS</span>
+              <p>Problem Solving</p>
+            </div>
+            <div class="skill-card">
+              <img src="assets/logos/teamwork.png" alt="" class="skill-logo">
+              <p>Teamwork</p>
+            </div>
+          </div>
+
+          <h3 class="subsection-title">Experience</h3>
+          <div class="experience-grid">
+            <div class="experience-item">
+              <h3>UI/UX Design Practice</h3>
+              <p>Created page layouts, visual sections, and navigation flows focused on clarity, spacing, and user-friendly presentation.</p>
+            </div>
+            <div class="experience-item">
+              <h3>Frontend Web Projects</h3>
+              <p>Built interactive portfolio and themed web pages using HTML, CSS, and JavaScript with responsive structure and polished visuals.</p>
+            </div>
+            <div class="experience-item">
+              <h3>Programming Practice</h3>
+              <p>Worked with multiple programming languages to strengthen logic, syntax, debugging, and problem-solving fundamentals.</p>
+            </div>
+            <div class="experience-item">
+              <h3>Project Organization</h3>
+              <p>Organized assets, linked project pages, and maintained clean file structure for easier updates and presentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT SECTION -->
+    <section class="hero projects-section" id="project">
+      <div class="content">
+        <div class="text-block">
+          <h2 class="section-title">Project</h2>
+          <p class="section-text">
+            A selection of web projects focused on interactive layouts and themed digital experiences.
+          </p>
+          <div class="projects-grid">
+            <article class="project-card">
+              <img src="Stranger Things 3D Carousel/src/images/dustin.png" alt="Stranger Things 3D Carousel" class="project-image">
+              <div class="project-content">
+                <h3>Stranger Things 3D Carousel</h3>
+                <p>An animated character carousel with a bold entertainment-inspired layout.</p>
+                <a href="Stranger Things 3D Carousel/index1.html">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="swars/images/starwars.png" alt="Star Wars Project" class="project-image">
+              <div class="project-content">
+                <h3>Star Wars Gallery</h3>
+                <p>A themed Star Wars character page with separate Rebel Alliance and Galactic Empire views.</p>
+                <a href="swars/index2.html">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-code-preview" aria-hidden="true">
+                <span>PY</span>
+              </div>
+              <div class="project-content">
+                <h3>Snake</h3>
+                <p>A Python Snake game with score tracking, keyboard movement, and a restart button.</p>
+                <a href="snake.py">View Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h2>Contact Me</h2>
+      <p>I'd love to hear from you! Feel free to reach out for collaboration or inquiries.</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> ruperttropico12@gmail.com</p>
+        <p><strong>Phone:</strong> +639155822725</p>
+        <p><strong>Location:</strong> Opol, Misamis Oriental</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

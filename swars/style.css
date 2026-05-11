@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/star-jedi');
+
+@font-face {
+    font-family: 'Trajan Pro';
+    src: url('fonts/TrajanPro-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body { 
+    margin: 0; 
+    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%); 
+    overflow-x: hidden; 
+    font-family: 'Inter', sans-serif;
+    color: white;
+    min-height: 100vh;
+    width: 100vw;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+canvas { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.starwars-title {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;          
+    max-width: 50%;
+    height: auto;
+    z-index: 20;
+    pointer-events: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .starwars-title { 
+        width: 220px; 
+        top: 14px; 
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 180px 50px 50px; 
+    min-height: 100vh;
+    box-sizing: border-box;
+    perspective: 1000px;
+}
+
+.container,
+.starwars-title,
+.faction-banner,
+.starwars-intro {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.container.zoom-out {
+    opacity: 0;
+    transform: scale(1.08);
+    pointer-events: none;
+}
+
+.starwars-title.zoom-out {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.08);
+    pointer-events: none;
+}
+
+.starwars-intro {
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    margin: 0;
+    width: min(90vw, 720px);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Star Jedi', 'Trajan Pro', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.2em;
+    color: #f1d272;
+    text-shadow: 0 0 10px rgba(241, 210, 114, 0.5);
+    pointer-events: none;
+}
+
+.starwars-intro.zoom-out {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.08);
+    pointer-events: none;
+}
+
+.glass-card {
+    width: 320px;
+    max-width: 100%; 
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+}
+
+.card-content, 
+.card-image-wrapper { 
+    transform: translateZ(20px); 
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.glass-card:nth-of-type(1) .card-image-wrapper img {
+    object-position: 40% 30%;
+}
+
+.glass-card:nth-of-type(2) .card-image-wrapper img {
+    object-position: 50% 25%;
+}
+
+
+.glass-card:nth-of-type(3) .card-image-wrapper img {
+    object-position: center 20%;
+}
+
+
+.glass-card:nth-of-type(4) .card-image-wrapper img {
+    object-position: center 1%;
+}
+
+.glass-card:nth-of-type(5) .card-image-wrapper img {
+    object-position: 50% 5%;
+}
+
+@media (hover: hover) {
+    .glass-card:hover .card-image-wrapper img { 
+        transform: scale(1.15); 
+    }
+}
+
+.card-content {
+    padding: 25px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.glass-card h2 {
+    margin-top: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #fff, #4deeea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(77, 238, 234, 0.3);
+}
+
+.glass-card p {
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #4deeea;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(77, 238, 234, 0.3);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn:active, 
+.btn:hover {
+    background: rgba(77, 238, 234, 0.1);
+    box-shadow: 0 0 15px rgba(77, 238, 234, 0.4);
+    border-color: #4deeea;
+    color: white;
+}
+
+.warp-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 0.5s ease-in;
+}
+
+.warp-overlay.active { 
+    opacity: 1; 
+}
+
+.faction-banner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.faction-banner.zoom-out {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.08);
+}
+
+.faction-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+}
+
+.faction-title {
+    margin: 0;
+    font-family: 'Trajan Pro', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    text-align: center;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.28);
+}
+
+.index-page .container {
+    padding: 220px 40px 60px;
+    gap: 56px;
+}
+
+.index-page .glass-card {
+    width: min(430px, 92vw);
+}
+
+.index-page .card-image-wrapper {
+    height: 240px;
+}
+
+.index-page .glass-card:nth-of-type(2) .card-image-wrapper img {
+    object-position: 50% 45%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 140px 15px 40px;
+        gap: 25px;
+        flex-direction: column; 
+    }
+
+    .glass-card {
+        width: 100%; 
+        transform: none !important;
+    }
+
+    .card-image-wrapper {
+        height: 180px;
+    }
+    
+    .glass-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .faction-banner {
+        top: 12px;
+    }
+
+    .faction-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .faction-title {
+        font-size: 0.85rem;
+        letter-spacing: 0.14em;
+    }
+
+    .starwars-intro {
+        top: 132px;
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        width: min(94vw, 520px);
+    }
+
+    .index-page .container {
+        padding: 150px 15px 40px;
+        gap: 20px;
+    }
+
+    .index-page .card-image-wrapper {
+        height: 200px;
+    }
+}
+

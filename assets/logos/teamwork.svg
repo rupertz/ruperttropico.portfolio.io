@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Teamwork icon</title>
+  <defs>
+    <linearGradient id="teamworkGradient" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00d1ff"/>
+      <stop offset="1" stop-color="#ffb703"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#050505"/>
+  <circle cx="32" cy="19" r="9" fill="url(#teamworkGradient)"/>
+  <circle cx="17" cy="29" r="7" fill="#00d1ff"/>
+  <circle cx="47" cy="29" r="7" fill="#ffb703"/>
+  <path d="M15 51c1.3-9.1 8-16 17-16s15.7 6.9 17 16H15Z" fill="url(#teamworkGradient)"/>
+  <path d="M5 51c1-6.8 5.8-12 12-12 3 0 5.7 1.2 7.8 3.2A22.5 22.5 0 0 0 18 51H5Z" fill="#00d1ff"/>
+  <path d="M46 51a22.5 22.5 0 0 0-6.8-8.8A11.1 11.1 0 0 1 47 39c6.2 0 11 5.2 12 12H46Z" fill="#ffb703"/>
+</svg>
