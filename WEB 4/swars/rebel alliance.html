@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Galactic Empire - Galactic Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --sn-bg: #0B0F1A;
+            --sn-primary: #FF2A2A;
+            --sn-secondary: #C0C0C0;
+            --sn-glow: rgba(255, 0, 0, 0.5);
+        }
+
+        body {
+            background: radial-gradient(circle at center, #141a2a 0%, var(--sn-bg) 62%, #05070d 100%);
+        }
+
+        .glass-card {
+            background: rgba(192, 192, 192, 0.05);
+            border: 1px solid rgba(255, 42, 42, 0.25);
+            border-top: 1px solid rgba(192, 192, 192, 0.4);
+            border-left: 1px solid rgba(192, 192, 192, 0.35);
+            box-shadow: 0 8px 32px var(--sn-glow);
+        }
+
+        .card-image-wrapper {
+            border-bottom: 1px solid rgba(255, 42, 42, 0.3);
+        }
+
+        .card-content {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 42, 42, 0.14) 100%);
+        }
+
+        .glass-card h2 {
+            background: linear-gradient(90deg, var(--sn-secondary), var(--sn-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 18px var(--sn-glow);
+        }
+
+        .glass-card p {
+            color: rgba(192, 192, 192, 0.9);
+        }
+
+        .btn {
+            background: rgba(255, 42, 42, 0.12);
+            color: var(--sn-secondary);
+            border: 1px solid rgba(255, 42, 42, 0.5);
+        }
+
+        .btn:active,
+        .btn:hover {
+            background: rgba(255, 42, 42, 0.28);
+            box-shadow: 0 0 16px var(--sn-glow);
+            border-color: var(--sn-primary);
+            color: #ffffff;
+        }
+
+        .warp-overlay {
+            background: white;
+        }
+
+        .container {
+            padding-top: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="sky"></canvas>
+    <div class="warp-overlay"></div>
+    <div class="faction-banner" aria-label="Galactic Empire emblem">
+        <img class="faction-logo" src="images/galactic.png" alt="Galactic Empire Symbol">
+        <p class="faction-title">GALACTIC EMPIRE</p>
+    </div>
+
+    <div class="container" id="ui-container">
+        <a class="btn" style="position: fixed; top: 20px; left: 20px; z-index: 50; margin: 0;">Back</a>
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/darth-vader.jpeg" alt="Darth Vader">
+            </div>
+            <div class="card-content">
+                <h2>Darth Vader</h2>
+                <p>The Dark Lord of the Sith and Supreme Commander of the Imperial Forces. Master of the dark side, feared throughout the galaxy for his power.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/emperor-palpatine.png" alt="Emperor Palpatine">
+            </div>
+            <div class="card-content">
+                <h2>Emperor Palpatine</h2>
+                <p>The supreme ruler of the Galactic Empire and master of the dark side Force. Manipulative genius who transformed the Republic into an authoritarian regime.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/grand-moff-tarkin.png" alt="Grand Moff Tarkin">
+            </div>
+            <div class="card-content">
+                <h2>Grand Moff Tarkin</h2>
+                <p>A ruthless Imperial commander and architect of the Death Star. Known for his strategic brilliance and unwavering loyalty to the Empire.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/kylo-ren.jpeg" alt="Kylo Ren">
+            </div>
+            <div class="card-content">
+                <h2>Kylo Ren</h2>
+                <p>A powerful dark side warrior and leader of the First Order's forces. Volatile and dangerous, driven by rage and a desire for power.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/captain-phasma.png" alt="Captain Phasma">
+            </div>
+            <div class="card-content">
+                <h2>Captain Phasma</h2>
+                <p>A formidable military commander of the First Order. Known for her distinctive silver armor and exceptional combat skills in the Imperial forces.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

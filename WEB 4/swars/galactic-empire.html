@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rebel Alliance - Galactic Interface</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --nebula-glow: rgba(77, 238, 234, 0.5);
+        }
+
+        .glass-card {
+            box-shadow: 0 8px 32px var(--nebula-glow);
+        }
+
+        .glass-card h2 {
+            text-shadow: 0 0 18px var(--nebula-glow);
+        }
+
+        .btn:active,
+        .btn:hover {
+            box-shadow: 0 0 16px var(--nebula-glow);
+        }
+
+        .container {
+            padding-top: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="sky"></canvas>
+    <div class="warp-overlay"></div>
+    <div class="faction-banner" aria-label="Rebel Alliance emblem">
+        <img class="faction-logo" src="images/rebel.png" alt="Rebel Alliance Symbol">
+        <p class="faction-title">REBEL ALLIANCE</p>
+    </div>
+
+    <div class="container" id="ui-container">
+        <a class="btn" style="position: fixed; top: 20px; left: 20px; z-index: 50; margin: 0;">Back</a>
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/luke-skywalker.jpeg" alt="Luke Skywalker">
+            </div>
+            <div class="card-content">
+                <h2>Luke Skywalker</h2>
+                <p>A powerful Jedi Knight and farm boy from Tatooine. Master of the Force, destined to restore balance to the galaxy and defeat the Empire.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/leia-organa.jpg" alt="Leia Organa">
+            </div>
+            <div class="card-content">
+                <h2>Leia Organa</h2>
+                <p>A courageous princess and diplomatic leader of the Rebel Alliance. Strategic mind and fierce warrior fighting for galactic freedom.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/han-solo.jpg" alt="Han Solo">
+            </div>
+            <div class="card-content">
+                <h2>Han Solo</h2>
+                <p>A skilled smuggler and pilot of the Millennium Falcon. Roguish charm and exceptional piloting skills make him an invaluable ally to the Rebellion.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/chewbacca.png" alt="Chewbacca">
+            </div>
+            <div class="card-content">
+                <h2>Chewbacca</h2>
+                <p>A loyal Wookiee warrior and co-pilot of the Millennium Falcon. Devoted companion known for his strength and unwavering loyalty to his friends.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="card-image-wrapper">
+                <img src="images/lando-calrissian.jpg" alt="Lando Calrissian">
+            </div>
+            <div class="card-content">
+                <h2>Lando Calrissian</h2>
+                <p>A charming administrator and quick-thinking strategist. Former owner of the Millennium Falcon, now a general fighting alongside the Rebellion.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
